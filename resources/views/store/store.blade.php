@@ -5,15 +5,22 @@
     <div class="twelve wide column">
         <!--main card -->
         <div class="ui card fluid">
-            <div class="image">
-                <img src="https://www.julen.ch/assets/Alpenhof/Restaurant-Alpenhof/_resampled/CroppedImage1600900-restaurant-alpenhof-zermatt.jpg">
+            <div class="ui  image" style=" height : 300px;   background: url(https://www.julen.ch/assets/Alpenhof/Restaurant-Alpenhof/_resampled/CroppedImage1600900-restaurant-alpenhof-zermatt.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;">
+                <img src="">
             </div>
             <div class="content">
-                <div class="left floated content">
-                    <h3> {{$store->name}} </h3>
+                <div class="">
+                  <div class="ui grid ">
+                    <div class="two wide column"><img class="ui tiny rounded image" src="https://semantic-ui.com/images/wireframe/image.png"></div>
+                    <div class="twelve wide column"><h3> {{$parameters['store']->name}} </h3></div>
+                    <div class="two wide column"><div class="ui button green">{{round($parameters['rating'],1)}}</div></div>
+                  </div>
+
                 </div>
                 <div class="right floated content">
-                    <div class="ui button green">4.6</div>
+
                 </div>
             </div>
             <div class="extra content">
@@ -104,7 +111,7 @@
                                         <i class="mobile icon big "></i>Phone number</h5>
                                 </div>
                                 <div class="eight wide tablet column sixteen wide computer eight wide mobile">
-                                    +216 {{$store->phone_number}}
+                                    +216 {{$parameters['store']->phone_number}}
                                 </div>
                             </div>
 
@@ -141,9 +148,6 @@
                                 <div class="eight wide tablet column  sixteen wide computer eight wide mobile ">
                                     <h5>
                                         <i class="map icon big "></i>Adresse</h5>
-                                </div>
-                                <div class="eight wide tablet column sixteen wide computer eight wide mobile ">
-                                    {{$store->address}}
                                 </div>
                             </div>
 
@@ -187,126 +191,41 @@
         </div>
         <div class="ui bottom attached tab segment" data-tab="second">
             <div class="ui feed">
-                <div class="event">
-                    <div class="label">
-                        <img src="/images/avatar/small/elliot.jpg">
-                    </div>
-                    <div class="content">
-                        <div class="summary">
-                            <a class="user">
-                                Elliot Fu
-                            </a> added you as a friend
-                            <div class="date">
-                                1 Hour Ago
-                            </div>
-                        </div>
-                        <div class="meta">
-                            <a class="like">
-                                <i class="like icon"></i> 4 Likes
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="event">
-                    <div class="label">
-                        <img src="/images/avatar/small/helen.jpg">
-                    </div>
-                    <div class="content">
-                        <div class="summary">
-                            <a>Helen Troy</a> added
-                            <a>2 new illustrations</a>
-                            <div class="date">
-                                4 days ago
-                            </div>
-                        </div>
-                        <div class="extra images">
-                            <a>
-                                <img src="/images/wireframe/image.png">
-                            </a>
-                            <a>
-                                <img src="/images/wireframe/image.png">
-                            </a>
-                        </div>
-                        <div class="meta">
-                            <a class="like">
-                                <i class="like icon"></i> 1 Like
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="event">
-                    <div class="label">
-                        <img src="/images/avatar/small/jenny.jpg">
-                    </div>
-                    <div class="content">
-                        <div class="summary">
-                            <a class="user">
-                                Jenny Hess
-                            </a> added you as a friend
-                            <div class="date">
-                                2 Days Ago
-                            </div>
-                        </div>
-                        <div class="meta">
-                            <a class="like">
-                                <i class="like icon"></i> 8 Likes
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="event">
-                    <div class="label">
-                        <img src="/images/avatar/small/joe.jpg">
-                    </div>
-                    <div class="content">
-                        <div class="summary">
-                            <a>Joe Henderson</a> posted on his page
-                            <div class="date">
-                                3 days ago
-                            </div>
-                        </div>
-                        <div class="extra text">
-                            Ours is a life of constant reruns. We're always circling back to where we'd we started, then starting all over again. Even
-                            if we don't run extra laps that day, we surely will come back for more of the same another day
-                            soon.
-                        </div>
-                        <div class="meta">
-                            <a class="like">
-                                <i class="like icon"></i> 5 Likes
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="event">
-                    <div class="label">
-                        <img src="/images/avatar/small/justen.jpg">
-                    </div>
-                    <div class="content">
-                        <div class="summary">
-                            <a>Justen Kitsune</a> added
-                            <a>2 new photos</a> of you
-                            <div class="date">
-                                4 days ago
-                            </div>
-                        </div>
-                        <div class="extra images">
-                            <a>
-                                <img src="/images/wireframe/image.png">
-                            </a>
-                            <a>
-                                <img src="/images/wireframe/image.png">
-                            </a>
-                        </div>
-                        <div class="meta">
-                            <a class="like">
-                                <i class="like icon"></i> 41 Likes
-                            </a>
-                        </div>
-                    </div>
-                </div>
+              @foreach($parameters['reviews'] as $review)
+              <div class="event">
+                  <div class="label">
+                      <img src="https://semantic-ui.com/images/avatar/small/elliot.jpg">
+                  </div>
+                  <div class="content">
+                      <div class="summary">
+                          <a class="user">
+                              {{$review->user->name}}
+                          </a> rated this restaurant with {{$review->rating}} stars
+                           @for ($i = 1; $i <= $review->rating; $i++)
+                            <i class="ui icon star"></i>
+                           @endfor
+                          <div class="date">
+                              1 Hour Ago
+                          </div>
+                      </div>
+                      <div class="extra text">
+                        {{$review->text}}
+                      </div>
+                  </div>
+              </div>
+              @endforeach
             </div>
         </div>
         <div class="ui bottom attached tab segment" data-tab="third">
+          <button class="ui labeled icon button" id="photo">
+          <i class="add icon"></i>
+          ajouter une photo
+          </button>
+          <br>
+          <br>
+          @foreach($parameters['photos'] as $photo)
+            <img  class="ui  big image" src="/storage/store_photos/{{$photo->photo}}"/><br>
+          @endforeach
             <div class="ui  grid">
 
                 <div class="four wide column">
@@ -337,7 +256,15 @@
             </div>
         </div>
         <div class="ui bottom attached tab segment" data-tab="fourth">
-            four
+          <button class="ui labeled icon button" id="menu">
+          <i class="add icon"></i>
+          ajouter menu
+          </button>
+          <br>
+          <br>
+          @foreach($parameters['menu'] as $menu)
+            <img  class="ui  big image" src="/storage/menus/{{$menu->photo}}"/><br>
+          @endforeach
         </div>
 
     </div>
@@ -347,11 +274,12 @@
     <!--side bar -->
     <div class="four wide column">
         <!--ads goes here -->
-        <div class="ui card fluid">
+
+        <!--<div class="ui card fluid">
             <div class="ui top left attached label yellow">Ad</div>
             <img src="https://tpc.googlesyndication.com/simgad/15639165454737860574" />
         </div>
-
+      -->
         <!--opening hours widget-->
         <div class="ui card fluid">
             <div class="content">
@@ -458,8 +386,64 @@
             </div>
         </div>
     </div>
+    <!-- Modals-->
+    <!--menu modal-->
+    <div class="ui tiny modal" id="photos_modal" >
+          <i class="close icon"></i>
+      <div class="header">
+        Add a photo
+      </div>
+      <div class="image content">
+        <div class="description">
+          <div class="ui header">Ajouter des photos de vous  et gangner des points.</div>
+          {!! Form::open(['action' => 'PhotosController@store','id'=>'form3','class'=>'ui form', 'method' => 'POST','enctype' => 'multipart/form-data' ]) !!}
+          <div>
+              <label for="file" class="ui icon fluid button">
+                  <i class="image icon"></i>
+                  upload image</label>
+              <input type="file" name="photo" id="file" style="display:none">
+            </div>
+             <input type="hidden" name="store_id"  value="{{$parameters['store']->id}}"/>
+          {!! Form::close() !!}
+        </div>
+      </div>
+      <div class="actions">
+        <button type="submit" form="form3" value="Submit" class="ui blue right labeled icon button" >
+          Confirmer
+          <i class="send icon"></i>
+        </button>
+      </div>
+    </div>
+    <!--photos modal-->
+    <div class="ui tiny modal" >
+          <i class="close icon"></i>
+      <div class="header">
+        Add menu
+      </div>
+      <div class="image content">
+        <div class="description">
+          <div class="ui header">Ajouter des photos de menu et gangner des points.</div>
+          {!! Form::open(['action' => 'MenusController@store','id'=>'form2','class'=>'ui form', 'method' => 'POST','enctype' => 'multipart/form-data' ]) !!}
+          <div>
+              <label for="file" class="ui icon fluid button">
+                  <i class="image icon"></i>
+                  upload image</label>
+              <input type="file" name="menu_photo" id="file" style="display:none">
+            </div>
+             <input type="hidden" name="store_id"  value="{{$parameters['store']->id}}"/>
+          {!! Form::close() !!}
+        </div>
+      </div>
+      <div class="actions">
+        <button type="submit" form="form2" value="Submit" class="ui blue right labeled icon button" >
+          Confirmer
+          <i class="send icon"></i>
+        </button>
+      </div>
+    </div>
     <!--rating-->
-    <div class="ui modal">
+
+    <div class="ui small modal">
         <i class="close icon"></i>
         <div class="header">
             Profile Picture
@@ -467,30 +451,28 @@
         <div class="image content">
             <div class="ui medium image">
                 <img src="https://semantic-ui.com/images/avatar2/large/rachel.png"><br>
-                <div class="ui label">
-                <i class="image icon large"></i>add image
-            </div>
             </div>
             <div class="description">
                 <div class="ui header">Noter le restaurant.</div>
-                <div class="ui heart rating huge" data-rating="1" data-max-rating="5"></div>
+                <div class="ui  rating huge" data-rating="1" data-max-rating="5"></div>
                 <div class="ui header">Ecrire un Review.</div>
-                <form class="ui form">
+                {!! Form::open(['action' => 'ReviewsController@store','id'=>'form1','class'=>'ui form', 'method' => 'POST','enctype' => 'multipart/form-data' ]) !!}
                     <div class="field">
-                        <textarea></textarea>
+                        <textarea name="text" placeholder="Note: writing a review will make you win more points Try to make your review releavant and constructive."></textarea>
                     </div>
-                </form>
+                    <input type="hidden" name="rating" id="rating_value"/>
+                    <input type="hidden" name="store_id" value="{{$parameters['store']->id}}" />
+                {!! Form::close() !!}
                 <p>
                     <b>Note:</b> writing a review will make you win more points Try to make your review releavant and constructive.</p>
-            
             </div>
-            
         </div>
         <div class="actions">
-            <div class="ui primary right labeled icon button">
-                publier
-                <i class="send icon"></i>
-            </div>
+          <button type="submit" form="form1" value="Submit" class="ui primary right labeled icon button" >
+            publier
+            <i class="send icon"></i>
+          </button>
+        </div>
         </div>
     </div>
 </div>

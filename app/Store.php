@@ -13,13 +13,13 @@ class Store extends Model
     public function collections(){
         return $this->hasMany('App\Collection');
     }
-    
+
     public function categories(){
         return $this->hasMany('App\Category');
     }
 
     public function menu(){
-        return $this->hasOne('App\Menu');
+        return $this->hasMany('App\Menu');
     }
 
     public function reviews(){

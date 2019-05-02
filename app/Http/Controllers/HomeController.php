@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Store;
+use App\Reviews;
 
 class HomeController extends Controller
 {
@@ -22,15 +24,17 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   $reviews = Reviews::all();
         return view('dashboard/home');
     }
 
     public function stores(){
-        return view('dashboard.stores.index');
+        $stores=Store::all();
+        return view('dashboard.stores.index')->with('stores',$stores);
     }
     public function reviews(){
-        return view('dashboard.reviews.index');
+        $reviews = Reviews::all();
+        return view('dashboard.reviews.index')->with('reviews',$reviews);
     }
     public function notifications(){
         return view('dashboard.notifications.index');

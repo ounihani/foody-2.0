@@ -29,41 +29,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                  @foreach($stores as $store)
+                  @foreach($users as $user)
                     <tr>
-                        <td>{{$store->name}}</td>
+                        <td>{{$user->name}}</td>
                         <td class="right aligned">
-                            <a href="/stores/{{$store->id}}">
+                            <a href="/users/{{$user->id}}">
                                 <button class="circular ui button icon">
                                     <i class="icon unhide"></i>
                                 </button>
                             </a>
-                            <a href="/collections/13/edit">
-                                <button class="circular ui icon button">
-                                    <i class="icon edit"></i>
-                                </button>
-                            </a>
-                            {!!Form::open(['action' => ['StoreController@destroy',  $store->id],'style'=>'display : inline;', 'method' => 'POST'])!!}
-                            {{Form::hidden('_method', 'DELETE')}}
+                            <form method="POST" action="" accept-charset="UTF-8" style="display : inline;">
+                                <input name="_method" type="hidden" value="DELETE">
                                 <button class="circular ui icon button">
                                     <i class="icon trash"></i>
                                 </button>
-                            {!!Form::close()!!}
+                            </form>
                         </td>
                     </tr>
-                    @endforeach
-
-                    <tr>
-                        <td colspan="2">
-                            <center>
-                                <a href="/stores/create">
-                                    <button class="circular ui icon teal button">
-                                        <i class=" icon add"></i>
-                                    </button>
-                                </a>
-                            </center>
-                        </td>
-                    </tr>
+                  @endforeach
                 </tbody>
             </table>
         </div>

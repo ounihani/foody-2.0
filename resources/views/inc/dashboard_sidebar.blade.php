@@ -4,19 +4,25 @@
         <div class="ui teal left pointing label">1</div>
     </a>
     <a class="item" href="/home/stores">
-        Restaurants
+        Stores
         <div class="ui label">51</div>
     </a>
     <a class="item" href="/collections">
         Collections
         <div class="ui label">1</div>
     </a>
-    <a class="item" href="/home/reviews">
-        Reviews
-        <div class="ui label">1</div>
-    </a>
     <a class="item" href="/categories">
         Categories
+        <div class="ui label">1</div>
+    </a>
+
+    <a class="item" href="/users">
+        Users
+        <div class="ui label">1</div>
+    </a>
+
+    <a class="item" href="/home/reviews">
+        Reviews
         <div class="ui label">1</div>
     </a>
 

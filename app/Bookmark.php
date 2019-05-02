@@ -14,6 +14,6 @@ class Bookmark extends Model
         return $this->hasOne('App\Store');
     }
 
-    
+
 
 }

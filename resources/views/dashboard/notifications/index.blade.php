@@ -22,7 +22,140 @@
         </div>
         <!-- The main column-->
         <div class="ui twelve wide column card">
-           ok
+            <div class="ui feed">
+                <div class="event">
+
+                    <div class="content">
+                        <div class="summary">
+                            added you as a friend
+                            <div class="date">
+                                1 Hour Ago
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <a class="like">
+                                <i class="icon edit"></i> edit
+                            </a>
+                            <a class="like">
+                                <i class="icon unhide"></i> see
+                            </a>
+                            <a class="like">
+                                <i class="trash icon"></i> remove
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="event">
+
+                    <div class="content">
+                        <div class="summary">
+                            added you as a friend
+                            <div class="date">
+                                1 Hour Ago
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <a class="like">
+                                <i class="icon edit"></i> edit
+                            </a>
+                            <a class="like">
+                                <i class="icon unhide"></i> see
+                            </a>
+                            <a class="like">
+                                <i class="trash icon"></i> remove
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="event">
+
+                    <div class="content">
+                        <div class="summary">
+                            added you as a friend
+                            <div class="date">
+                                1 Hour Ago
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <a class="like">
+                                <i class="icon edit"></i> edit
+                            </a>
+                            <a class="like">
+                                <i class="icon unhide"></i> see
+                            </a>
+                            <a class="like">
+                                <i class="trash icon"></i> remove
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="event">
+
+                    <div class="content">
+                        <div class="summary">
+                            added you as a friend
+                            <div class="date">
+                                1 Hour Ago
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <a class="like">
+                                <i class="icon edit"></i> edit
+                            </a>
+                            <a class="like">
+                                <i class="icon unhide"></i> see
+                            </a>
+                            <a class="like">
+                                <i class="trash icon"></i> remove
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="event">
+
+                    <div class="content">
+                        <div class="summary">
+                            added you as a friend
+                            <div class="date">
+                                1 Hour Ago
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <a class="like">
+                                <i class="icon edit"></i> edit
+                            </a>
+                            <a class="like">
+                                <i class="icon unhide"></i> see
+                            </a>
+                            <a class="like">
+                                <i class="trash icon"></i> remove
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="event">
+
+                    <div class="content">
+                        <div class="summary">
+                            added you as a friend
+                            <div class="date">
+                                1 Hour Ago
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <a class="like">
+                                <i class="icon edit"></i> edit
+                            </a>
+                            <a class="like">
+                                <i class="icon unhide"></i> see
+                            </a>
+                            <a class="like">
+                                <i class="trash icon"></i> remove
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <br>

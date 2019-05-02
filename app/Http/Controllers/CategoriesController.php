@@ -14,7 +14,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        
+
         $categories=Category::all();
         return view('dashboard.categories.index')->with('categories',$categories);;
     }
@@ -42,7 +42,7 @@ class CategoriesController extends Controller
             'image'=>'image|nullable|max:1999',
             'cover'=>'image|nullable|max:1999'
             ]);
-            
+
             if($request->hasFile('image')){
                 // Get filename with the extension
                 $filenameWithExt = $request->file('image')->getClientOriginalName();
@@ -68,25 +68,25 @@ class CategoriesController extends Controller
                 // Upload Image
                 $path = $request->file('cover')->storeAs('public/categories_images', $fileNameToStore1);
             }
-            
+
             $category = new category ;
             $category->name=$request->input('name');
-            
+
             if($request->hasFile('image')){
             $category->image=$fileNameToStore;
             }else{
-                $category->image="no_image.png";  
+                $category->image="no_image.png";
             }
 
             if($request->hasFile('cover')){
             $category->cover=$fileNameToStore1;
             }else{
-                $category->cover="no_image.png";  
+                $category->cover="no_image.png";
             }
 
             $category->save();
-    
-    
+
+
             return redirect('/categories')->with('success','category created');
     }
 
@@ -122,13 +122,13 @@ class CategoriesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {   
+    {
         $this->validate($request,[
             'name'=>'required',
             'image'=>'image|nullable|max:1999',
             'cover'=>'image|nullable|max:1999'
             ]);
-            
+
             if($request->hasFile('image')){
                 // Get filename with the extension
                 $filenameWithExt = $request->file('image')->getClientOriginalName();
@@ -154,24 +154,24 @@ class CategoriesController extends Controller
                 // Upload Image
                 $path = $request->file('cover')->storeAs('public/categories_images', $fileNameToStore1);
             }
-            
+
             $category = Category::find($id) ;
             $category->name=$request->input('name');
-            
+
             if($request->hasFile('image')){
             $category->image=$fileNameToStore;
             }else{
-                $category->image="no_image.png";  
+                $category->image="no_image.png";
             }
 
             if($request->hasFile('cover')){
             $category->cover=$fileNameToStore1;
             }else{
-                $category->cover="no_image.png";  
+                $category->cover="no_image.png";
             }
 
             $category->save();
-               
+
     return redirect('/categories')->with('success','category updated');
 
     }

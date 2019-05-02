@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     public function store(){
-        return $this->hasOne('App\Store');
+        return $this->belongsTo('App\Store');
     }
 }
