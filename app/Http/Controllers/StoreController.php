@@ -74,7 +74,7 @@ class StoreController extends Controller
               // Get just ext
               $extension = $request->file('cover')->getClientOriginalExtension();
               // Filename to store
-              $fileNameToStore= $filename.'_'.time().'.'.$extension;
+              $fileNameToStore1= $filename.'_'.time().'.'.$extension;
               // Upload Image
               $path = $request->file('cover')->storeAs('public/stores_covers', $fileNameToStore);
           }
@@ -86,10 +86,10 @@ class StoreController extends Controller
           $store->address=$request->input('address');
           $store->longitude=0;
           $store->latitude=0;
-          return $request->get('preferences');
+          //return $request->get('preferences');
         //  $store->website=$request->input('website');//to add to a migration
           if($request->hasFile('logo')){
-          $store->cover=$fileNameToStore;
+          $store->cover=$fileNameToStore1;
           }else{
               $store->cover="no_image.png";
           }

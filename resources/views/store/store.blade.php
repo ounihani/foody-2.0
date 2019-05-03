@@ -5,7 +5,7 @@
     <div class="twelve wide column">
         <!--main card -->
         <div class="ui card fluid">
-            <div class="ui  image" style=" height : 300px;   background: url(https://www.julen.ch/assets/Alpenhof/Restaurant-Alpenhof/_resampled/CroppedImage1600900-restaurant-alpenhof-zermatt.jpg);
+        <div class="ui  image" style=" height : 300px;   background: url('{{'/storage/stores_logos/'.$parameters['store']->cover}}?auto=format,compress&cs=strip');
     background-repeat: no-repeat;
     background-size: auto;">
                 <img src="">
@@ -13,7 +13,7 @@
             <div class="content">
                 <div class="">
                   <div class="ui grid ">
-                    <div class="two wide column"><img class="ui tiny rounded image" src="https://semantic-ui.com/images/wireframe/image.png"></div>
+                    <div class="two wide column"><img class="ui tiny rounded image" src="/storage/stores_logos/{{$parameters['store']->logo}}"></div>
                     <div class="twelve wide column"><h3> {{$parameters['store']->name}} </h3></div>
                     <div class="two wide column"><div class="ui button green">{{round($parameters['rating'],1)}}</div></div>
                   </div>
