@@ -23,7 +23,7 @@
         <a class="ui item" href="{{ route('login') }}">Login</a>
         <a class="ui item" href="{{ route('register') }}">Register</a> 
       @else
-        <div class="ui right dropdown item"> Profile
+        <div class="ui right dropdown item"> Dashboard
           <i class="dropdown icon">
           </i>
           <div class="menu">
